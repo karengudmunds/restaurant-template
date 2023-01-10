@@ -1,0 +1,15 @@
+<!-- Gallery block -->
+
+<section class="p-5p">
+    <div class="gallery grid grid-cols-{{block.gallery-column-count}} gap-2">
+  
+      {% for item in block.gallery %}
+  
+        <div class="col-span-{{item.column-size}} gallery-item bg-image bg-cover bg-center {{item.aspect-ratio}} p-10" 
+               style="background-image: url('{{item.background_image}}');">
+        </div>
+    
+      {% endfor %}
+      
+    </div>
+    </section> 

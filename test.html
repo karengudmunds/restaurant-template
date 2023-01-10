@@ -1,0 +1,128 @@
+---
+layout: default 
+title: test page 
+description_html: >-
+  <h2>Hello World</h2><p> This is so exciting...</p>
+banner-image: /images/placeholder.JPG
+heading-title: Look at this island! 
+video:
+  video-type: vimeo
+  youtube-video:  >-
+        <iframe
+        src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+        allow="autoplay"
+        ></iframe>
+  vimeo-video: >-
+      <iframe
+      src="https://player.vimeo.com/video/76979871?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+      allowfullscreen
+      allowtransparency
+      allow="autoplay"
+      ></iframe>
+  embedded_poster: /assets/css/image.jpg
+  embedded: 
+    - video_path: /assets/css/team-intro.mp4
+      xfile_type: mp4
+gallery-column-count: 4
+gallery:
+  - background_image: /images/placeholder.JPG
+    aspect-ratio:  aspect-square
+    column-size:
+  - background_image: /images/placeholder.JPG
+    aspect-ratio:  aspect-square
+    column-size: 
+  - background_image: /images/placeholder.JPG
+    aspect-ratio:  aspect-square
+    column-size: 
+  - background_image: /images/placeholder.JPG
+    aspect-ratio:  aspect-square
+    column-size: 
+  - background_image: /images/placeholder.JPG
+    aspect-ratio:  aspect-landscape
+    column-size: 2
+  - background_image: /images/placeholder.JPG
+    aspect-ratio:  aspect-landscape
+    column-size: 2
+seo:
+  meta-description: 
+  meta-keywords:
+  featured-image_path:
+  hide-from-google:
+---
+
+<!--  image banner block  -->
+      <section class="bg-image bg-cover bg-center min-h-screen flex items-center justify-center" style="background-image: url('{{page.banner-image}}')">
+        <div> 
+        <h2> {{page.heading-title}} </h2> 
+        </div> 
+      </section> 
+
+<!--  text content block  -->
+      <section> 
+          <div>
+      {{page.description_html}}
+          </div> 
+      </section> 
+    
+<!-- Youtube & vimeo embed block  -->
+    <section class="max-w-screen-sm p-2"> 
+
+      {% if page.video.video-type == 'youtube' %}
+
+          <div class="plyr__video-embed relative" id="player">
+          {{page.video.youtube-video}}
+          </div>
+
+      {% elsif page.video.video-type == 'vimeo' %}
+
+          <div class="plyr__video-embed relative" id="player">
+              {{page.video.vimeo-video}}
+          </div>
+
+          {% elsif page.video.video-type == 'embedded' %}
+
+          <video id="player" playsinline controls autoplay muted autobuffer="true" preload="auto" loop data-poster="{{ page.video.embedded_poster }}">
+  
+            {% for item in page.video.embedded %}
+            <source src="{{ item.video_path }}" type="video/{{ item.file_type }}" />
+
+            {% endfor %}
+            <!-- Captions are optional -->
+            <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+          </video>
+
+{% endif %}
+
+
+    </section> 
+
+<!-- gallery block  -->
+
+<section class="p-2">
+  <div class="gallery grid grid-cols-{{page.gallery-column-count}} gap-2" id="lightgallery">
+
+    {% for item in page.gallery %}
+
+      <div class="col-span-{{item.column-size}} gallery-item bg-image {{item.aspect-ratio}} p-10" 
+             style="background-image: url('{{item.background_image}}');">
+      </div>
+  
+    {% endfor %}
+    
+  </div>
+  </section> 
+  
+<!-- slider block  -->
+
+<!-- call to action block  --> 
+
+<section class="flex justify-center item-center p-2 editable"> 
+  <h2> Title </h2> 
+  <p>  This is a paragraph  </p> 
+  <a href="#"> button  </button>
+</section> 
+
+<!-- newsletter signup -->
+

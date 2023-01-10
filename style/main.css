@@ -1,0 +1,237 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.button {
+  @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
+}
+/* Custom CSS */
+
+/*  Responsive design  */
+
+/*  sm - 640px  - Iphone size  */
+/*  md - 768px - Ipad size */
+/*  lg - 1024px - desktop size  */
+/*  xl - 1280px  */
+/*  2xl - 1536px  */
+
+
+/* width of 16 by default, 32 on medium screen and 48 on large screen. -----    */
+
+
+/*  Utility classes  */
+
+/*  Position  */
+
+.static { postion: static; }
+.fixed { postion: fixed; }
+.absolute { postion: absolute; }
+.relative  { postion: relative; }
+.sticky  { postion: sticky; }
+
+
+/*  ---------------------    Typography  -----------------------*/
+
+/*  Font size  */
+
+.text-xs {
+font-size: 0.75rem;
+line-height: 1rem; 
+}
+
+.text-sm {
+font-size: 0.875rem;
+line-height: 1.25rem; 
+}
+
+.text-base {
+font-size: 1rem;
+line-height: 1.5rem; 
+}
+
+.text-lg {
+font-size: 1.125rem;
+line-height: 1.75rem; 
+}
+
+.text-xl {
+font-size: 1.25rem;
+line-height: 1.75rem; 
+}
+
+.text-2xl {
+font-size: 1.5rem;
+line-height: 2rem; 
+}
+
+.text-3xl {
+font-size: 1.875rem;
+line-height: 2.25rem; 
+}
+
+.text-4xl {
+font-size: 2.25rem;
+line-height: 2.5rem; 
+}
+
+.text-5xl {
+font-size: 3rem;
+line-height: 1;
+}
+
+.text-6xl {
+font-size: 3.75rem;
+line-height: 1;
+}
+
+.text-7xl {
+font-size: 4.5rem;
+line-height: 1;
+}
+
+.text-8xl {
+font-size: 6rem;
+line-height: 1;
+}
+
+.text-9xl {
+font-size: 8rem;
+line-height: 1;
+}
+
+/*  font style  */
+
+.italic { font-style: italic; }
+.non-italic { font-style: normal; }
+
+/*  Font weight  */
+
+.font-thin { font-weight: 100; }
+.font-extralight  { font-weight: 200; }
+.font-light { font-weight: 300; }
+.font-normal  { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+/*  letter spacing  */
+
+.tracking-tighter { letter-spacing: -0.05em;}
+.tracking-tight  { letter-spacing: -0.025em;}
+.tracking-normal  { letter-spacing: 0em;}
+.tracking-wide { letter-spacing: 0.025em;}
+.tracking-wider { letter-spacing: 0.05em;}
+.tracking-widest  { letter-spacing: 0.1em;}
+
+/*  line height  */
+
+.leading-none { line-height: 1; }
+.leading-tight  { line-height: 1.25; }
+.leading-snug  { line-height: 1.375; }
+.leading-normal  { line-height: 1.5; }
+.leading-relaxed  { line-height: 1.625; }
+.leading-loose  { line-height: 2; }
+
+/*  text Align  */
+
+.text-left { text-left: left; }
+.text-center  { text-left: center;  }
+.text-right  { text-left: right;  }
+.text-justify  { text-left: justify;  }
+.text-start  { text-left: start;  }
+.text-end  { text-left: end;  }
+
+/*  Text decoration  */
+
+.underline { text-decoration: underline; }
+.overline { text-decoration: overline; }
+.line-through  { text-decoration: line-through; }
+.no-underline { text-decoration: none; }
+
+/*  text Transform  */
+
+.uppercase { text-transform: uppercase; }
+.lowercase  { text-transform: lowercase; }
+.capitalize  { text-transform: capitalize;  }  - How to make a comment ? 
+.normal-case  { text-transform: none; }
+
+/*  vertical align  */
+
+.align-top { vertical-align: top; }
+.align-middle  { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/*  ---------------------    Backgrounds   -----------------------*/
+
+/*  Background attachment  */
+
+.bg-fixed { background-attachment: fixed; }
+.bg-local  { background-attachment: local; }
+.bg-scroll  { background-attachment: scroll; }
+
+/*  Background size  */
+
+.bg-auto { background-size: auto; }
+.bg-cover { background-size: cover; }
+.bg-contain  { background-size: contain; }
+
+/* background-color  */
+
+.bg-light { background-color:#FFF5ED; } 
+.bg-dark { background-color:#F5F5F5; } 
+
+
+/*  height classes */
+.tall-50 {   min-height: 50vh;  }
+.tall-60 {   min-height: 60vh;  }
+.tall-70 {   min-height: 70vh;  }
+.tall-80 {   min-height: 80vh;  }
+.tall-90 {   min-height: 90vh;  }
+
+
+/*  Search  */
+
+input#search-input  {
+padding: 0.5rem;
+border: 1px solid black; 
+margin-bottom: 2rem;
+}
+
+
+.search-result {
+border: 1px solid black
+}
+
+
+/*  card  */
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 20px 25px -5px #0003, 0 10px 10px -5px #0003;
+  top: -5px;
+}
+
+.card {
+  transitionl: .3s;
+  position: relative;
+  top: 0;
+  box-shadow: 0 0 0 0 rgba(100, 100, 200, 0),0 0 0 0 rgba(100, 100, 200, 0);
+}
+
+/*  tags colors  */
+
+.bistro {background-color: #272; }
+
+.fine.dining {background-color: #5454E5; }

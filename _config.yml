@@ -1,0 +1,85 @@
+_select_data: 
+    video-types: 
+      - vimeo 
+      - youtube
+      - self-hosted
+    section-styles:
+       p-5: padded sm
+       p-1: padded md
+       p-15: padded lg
+       light-bg: light background
+       featured-bg: featured background
+       dark-bg: dark background
+       text-center: centered
+    inner-styles:
+       p-5: padded sm
+       p-10: padded md
+       p-15: padded lg
+       max-w-screen-md: capped width md
+       max-w-screen-lg: capped width lg
+       max-w-screen-xl: capped width xl
+    aspect-ratio:
+       aspect-square: square
+       aspect-landscape: landscape
+       aspect-portrait: portrait
+       aspect-portrait-tall: portrait-tall
+    column-alignment:
+       align-top: top
+       align-middle: middle 
+       align-bottom: bottom
+    button-styles:
+       light-bg: light-color
+       dark-bg: dark-color
+       featured-bg: featured-color
+    banner-heights:
+      - tall-35
+      - tall-50
+      - tall-60
+      - tall-70
+      - tall-80
+      - tall-90
+
+page_blocks: [] 
+_array_structures:
+  page_blocks:
+    - label: Banner blocks 
+      icon: article
+      value:
+        _id: banner-blocks 
+        title: Banner block
+        banner-heights:
+        heading: This is a heading
+        subtitle: This is a subtitle 
+    - label: Text content
+      icon: article
+      value:
+        _id: text-content
+        title: text content block
+        section-styles:
+        description_html: 
+    - label: Video
+      icon: article
+      value:
+        _id: video
+        title: video block
+        video-types: 
+    - label: Gallery
+      icon: article
+      value:
+          _id: gallery 
+          title: gallery block
+          gallery-column-count: 4
+          gallery:
+                - background_image: /images/placeholder.JPG
+                  aspect-ratio: aspect-square
+                  column-size: 1
+    - label: CTA
+      icon: article
+      value:
+         _id: cta 
+         title: Call to action
+         section-styles:
+         button-styles:
+         heading:
+         description:
+         button_ url: 

@@ -1,0 +1,43 @@
+---
+layout: default
+category: restaurant
+---
+
+
+<!--  This is the restaurant page  -->
+
+  {% assign pageCategory = page.category %}
+  {% assign restaurantPosts = site.categories[pageCategory] %}
+
+
+<section class="bg-sky-100 ">
+  <h1 class="text-5xl text-center pt-5p mb-4"> Most popular restaurants </h1>
+
+  <div class="flex gap-6 flex-flow flex-nonwrap overflow-x-scroll p-5p pt-4">
+  {% for item in restaurantPosts %}  
+
+  <div class="card rounded-t-lg rounded-b-lg overflow-hidden max-w-[18rem] flex-shrink-0">
+
+      <img class="aspect-[4/5] bg-cover bg-center rounded-t-lg" src="{{item.featured_image}}"alt=""> 
+      </img> 
+      <div class="bg-white p-6 rounded-b-lg ">
+        <h3 class="text-xl min-h-[4rem]"> {{item.title}}</h3> 
+        <p class="mb-4 font-extralight"> {{item.description_html | truncatewords: 7 }} </p> 
+
+        {% for tags in item.tags %}
+
+        <span class="p-2 restaurants {{tags}} rounded-t-lg rounded-b-lg"> {{tags}} </span>
+
+        {% endfor %}
+       </div>
+  </div> 
+
+
+{% endfor %}
+
+</div> 
+
+</section> 
+
+
+

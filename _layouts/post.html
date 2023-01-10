@@ -1,0 +1,62 @@
+---
+layout: default 
+---
+
+<!--  This is the post layout page and will appear in this order -->
+
+<!--  heading ... -->
+<section>
+  <div class="pt-6 text-center max-w-screen-lg mx-auto">
+    <p class="text-sm"> {{page.categories | join: ' | '}} </p> 
+    <h1 class="text-4xl mt-3 mb-8"> Travel with me </h1> 
+    <h2 class="text-sm"> Name  </h2> 
+    <h2 class="text-sm">  date  </h2> 
+  </div> 
+
+
+
+<!--  This is the block loop  -->
+{% for block in page.page_blocks %}
+        {% include /block/{{block._id}}.html %}
+{% endfor %}
+
+
+  <section class="p-5p">
+    <h4 class="text-center  pb-10 text-2xl"> Related posts  </h4>
+    <div class="grid grid-cols-3 gap-5">
+		{% assign pageCategory = page.categories[0] %}
+		{% assign relevant = site.categories[pageCategory] | where_exp:"post","post.url != page.url" %}
+
+    {% for post in relevant limit:3 %}
+  
+      		<a href="{{post.url}}" class="block">
+            <img class="bg-cover aspect-square"src="{{post.featured_image}}" alt="">
+            <div class="p-6 bg-white"> 
+            <h3 class="text-3xl"> {{post.title}} </h3>
+        		<p class="font-extralight mt-2 text-sm">  <strong class="font-bold text-zinc-600"> {{post.author}} </strong>  {{post.date | date: "%m.%d.%Y" }}
+            </p> 
+        		<!-- <p> {{post.date | date: "%m.%d.%Y" }} </p> -->
+            <hr class="border-blue-300 w-10 border-t-2 mt-4 mb-4"> 
+            </div> 
+      		</a>
+    
+      		
+  		{% endfor %}
+  		
+    </div>
+  </section>
+
+
+    <div class="fixed social-share top-[50%] left-0 bg-zinc-800 p-2"> 
+      <nav class="text-white">
+        <a class="block p-4 hover:text-blue-300"href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a class="block p-4 hover:text-blue-300" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="block p-4 hover:text-blue-300" href="http://pinterest.com/pin/create/link/?url={{page.url}}&description={{page.title}}" rel="nofollow" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+      </nav>
+    </div> 

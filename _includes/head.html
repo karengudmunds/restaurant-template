@@ -1,0 +1,50 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
+
+    <!--  plyr video  -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
+
+    <!--  font awesome cnd -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google font - Manrope and Martel sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!--  Name of each page of the website -->
+    <title>{{page.title}}</title>
+
+    <!-- SEO Metadata -->
+    <title>{{page.seo.title | default: site.data.site-settings.seo.title}}</title> 
+    <meta name="description" content="{{ page.seo.description | default: site.data.site-settings.seo.description }}">
+    <meta name="keywords" content="{{ page.seo.keywords | default: site.data.site-settings.seo.keywords }}">
+
+    {% if page.seo.hide-from-google == true %}
+        <meta name="robots" content="noindex, nofollow">
+    {% else %}
+        <meta name="robots" content="index, follow">
+    {% endif %}
+
+    <!--  SEO Metadata  -->
+
+    <!--  Lightgallery  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lightgallery-bundle.min.css" integrity="sha512-7xAjdVc23n18sYEAZKa79271IRUS1XzylIyJ8feyXvjrbbr4oId92993EiGTAP63Ob6KplRnmbNmBOg6bpLjYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+

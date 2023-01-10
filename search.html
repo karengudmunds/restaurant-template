@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<!--  Need all this for the search box -->
+
+<section class="p-5 m-t-2"> 
+  <!-- HTML elements for search -->
+<input type="text" id="search-input" placeholder="Search blog posts..">
+<div class="grid grid-cols-3"id="results-container"></div>
+
+<!-- or without installing anything -->
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+<!-- This is the search box that shows up on the page - Here I can change the CSS styles -->
+<script> 
+var sjs = SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json',
+  searchResultTemplate: '<div class="m-2"><a href=" {{ site.url }}{url}" class="search-result block p-4 rounded hover:bg-blue-100"><h2>{title}</h2><p class="uppercase text-xs">{category}</p></a></div>'
+}) 
+
+</script>
+</section> 
